@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">covid-tracker</string>
+    <string name="total_case">Total Case</string>
+    <string name="indonesia">INDONESIA</string>
+    <string name="positive">Positive</string>
+    <string name="death">Death</string>
+    <string name="recovered">Recovered</string>
+    <string name="see_all">See All</string>
+    <string name="dki_jakarta">DKI Jakarta</string>
+    <string name="jawa_timur">Jawa Timur</string>
+    <string name="jawa_barat">Jawa Barat</string>
+    <string name="province_list">PROVINCE LIST</string>
 </resources>

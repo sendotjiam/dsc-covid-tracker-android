@@ -1,18 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
+    tools:context=".MainActivity"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="24dp"
+        android:background="@color/navy">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_indonesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/indonesia"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+        <TextView
+            android:id="@+id/tv_total_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="307120"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/tv_indonesia"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="24dp"
+            />
+        <TextView
+            android:id="@+id/tv_total_cases_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_case"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/tv_total_cases"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/card_positive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/tv_total_cases_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_positive"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:text="1231232"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/neon"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/positive"
+                android:textColor="@color/neon"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/card_recovered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/card_positive"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:id="@+id/tv_recovered"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="1231232"
+                android:textStyle="bold"
+                android:layout_marginEnd="40dp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/neon"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/recovered"
+                android:textColor="@color/neon"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/card_death"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/card_recovered"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:id="@+id/tv_death"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="1231232"
+                android:textStyle="bold"
+                android:layout_marginEnd="40dp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/neon"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/death"
+                android:textColor="@color/neon"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/card_death"
+            android:background="@color/neon"
+            />
+
+        <TextView
+            android:id="@+id/province_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Province List"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            />
+        <Button
+            android:id="@+id/btn_see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/see_all"
+            android:textSize="14dp"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/province_title"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/card_province_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/province_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="#1"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:textColor="@color/neon"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dki_jakarta"
+                android:textAlignment="center"
+                android:textColor="@color/neon"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_province_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/card_province_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="#2"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:textColor="@color/neon"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="@string/jawa_timur"
+                android:textColor="@color/neon"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_province_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/card_province_2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="#3"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:textColor="@color/neon"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="@string/jawa_barat"
+                android:textColor="@color/neon"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
